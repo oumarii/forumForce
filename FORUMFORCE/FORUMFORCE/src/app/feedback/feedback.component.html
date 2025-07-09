@@ -1,0 +1,10 @@
+<div style="margin-top: 10%; background-color: rgb(154, 160, 165);" class="container">
+    <h1>Votre Feedback </h1>
+
+    <div class="form-group">
+        <label for="description">Feedback</label>
+        <textarea [(ngModel)]="Feed.feedback" class="form-control" id="description" rows="3"
+            placeholder="Ecrire votre feedback"></textarea>
+    </div>
+    <br>
+    <button (click)="ajouter()" type="button" id="envoyerButton">Envoyer</button>

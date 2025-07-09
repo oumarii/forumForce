@@ -1,0 +1,239 @@
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.plan h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.plan .row {
+    margin-bottom: 20px;
+}
+
+.plan .col-sm p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.liste-seances {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+
+.liste-seances h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.list-group-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.list-group-item strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.list-group-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.list-group-item:last-child {
+    margin-bottom: 0;
+}
+
+.list-group-item:hover {
+
+    background-color: rgb(23, 224, 255);
+    padding: 6%;
+    transition: background-color 0.3s, padding 0.3s;
+    /* Ajout de la transition */
+}
+
+h3:hover {
+
+    font-size: 200%;
+    color: #c800ff;
+    transition: font-size 0.3s, color 0.3s;
+}
+
+nav {
+
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /* Pour centrer les éléments de la barre de navigation horizontalement */
+}
+
+nav ul li {
+    display: inline-block;
+    /* Pour afficher les éléments de la barre de navigation sur une ligne */
+}
+
+nav ul li a {
+    display: block;
+    /* Pour étendre les liens sur toute la largeur des éléments de la barre de navigation */
+    padding: 10px 20px;
+    /* Espacement interne pour les liens */
+    text-decoration: none;
+    /* Pour supprimer le soulignement par défaut des liens */
+    color: #333;
+    /* Couleur du texte des liens */
+}
+
+nav ul li a:hover {
+    background-color: #f0f0f0;
+    /* Couleur de fond au survol des liens */
+}
+
+/* Style pour le formulaire de planification */
+.planning {
+    border: 1%;
+    margin-left: 20%;
+}
+
+.planning-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+
+}
+
+/* Style pour les étiquettes */
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Style pour les champs de saisie */
+input[type="text"],
+input[type="date"] {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style pour le bouton de validation */
+button[type="submit"] {
+    background-color: #0078d4;
+    color: #ffffff;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #09ff00;
+}
+
+.all {
+
+    display: flex;
+    justify-content: space-between;
+
+    left: 9%;
+}
+
+.plan {
+
+    margin-right: 20%;
+
+    width: 500px;
+    /* Largeur fixe */
+
+    background-color: #ffffff;
+}
+
+#Edit {
+    background-color: #fff700;
+    color: #000000;
+    padding-left: 15px;
+    border-color: #fff700;
+    font-style: italic;
+    font-size: large;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#Edit:hover {
+
+    padding-left: 20px;
+
+
+}
+
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.countdown-item {
+    margin: 0 10px;
+    /* Adjust margin between countdown items */
+}
+
+.time {
+    font-size: 3.5rem;
+    /* Increase font size for the countdown numbers */
+    font-weight: bold;
+    background-color: #3498db;
+    /* Blue */
+    color: #fff;
+    /* White */
+    padding: 20px 30px;
+    /* Increase padding for better spacing */
+    border-radius: 15px;
+    /* Increase border radius for a softer look */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    /* Adjust box shadow for a more pronounced effect */
+}
+
+.label {
+    font-size: 1.6rem;
+    /* Increase font size for the label */
+    color: #95a5a6;
+    /* Light gray */
+    margin-top: 10px;
+    /* Add margin above the label */
+    text-transform: uppercase;
+}
+
+.days-remaining {
+    text-align: center;
+}
+
+.days-remaining-text {
+    font-size: 1.2rem;
+    color: #95a5a6;
+    /* Light gray */
+    text-transform: uppercase;
+    font-weight: bold;
+}

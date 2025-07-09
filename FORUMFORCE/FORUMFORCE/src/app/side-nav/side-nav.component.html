@@ -1,0 +1,42 @@
+<mat-list role="list" color="white">
+    <!---- <mat-list-item class="ho" role="listitem" *ngFor="let option of sideNavContent" routerLink="/{{option.link}}"
+        routerLinkActive="active">
+         {{option.title | titlecase}}
+    </mat-list-item>-->
+
+    <mat-list-item class="ho" role="listitem" routerLink="/site/dashboard" routerLinkActive="active">
+        <p><i class="fas fa-home"></i> Acceuil</p>
+    </mat-list-item>
+
+    <mat-list-item class="ho" role="listitem" routerLink="/site/entreprise" routerLinkActive="active">
+        <p><i class="fas fa-building"></i> Entreprises</p>
+    </mat-list-item>
+    <mat-list-item class="ho" role="listitem" routerLink="/site/groupes" routerLinkActive="active">
+        <p><i class="fas fa-users"></i> Groupes</p>
+    </mat-list-item>
+    <mat-list-item class="ho" role="listitem" routerLink="/site/tache" routerLinkActive="active">
+        <p><i class="fas fa-tasks"></i>Taches</p>
+    </mat-list-item>
+    <mat-list-item class="ho" role="listitem" routerLink="/site/planning" routerLinkActive="active">
+        <p> <i class="far fa-calendar-alt"></i> Planning</p>
+
+    </mat-list-item>
+
+    <mat-list-item class="ho" role="listitem" routerLink="/site/etudiant" routerLinkActive="active">
+        <p><i class="fas fa-users"></i> Etudiants</p>
+    </mat-list-item>
+    <mat-list-item class="ho" role="listitem" routerLink="/site/packs" routerLinkActive="active">
+        <p><i class="fas fa-box"></i> Packs</p>
+    </mat-list-item>
+    <mat-list-item class="ho" role="listitem" routerLink="/site/depence" routerLinkActive="active">
+        <p><i class="fas fa-ticket-alt"></i> Depenses</p>
+    </mat-list-item>
+
+    <mat-list-item class="ho" role="listitem" routerLink="/site/feedbackAFF" routerLinkActive="active">
+        <p><i class="fas fa-ticket-alt"></i> Feedbacks</p>
+    </mat-list-item>
+
+    <mat-list-item class="ho" role="listitem" routerLink="/login" routerLinkActive="active">
+        <p style="color: red;"><i class="fas fa-sign-out-alt"></i> LogOut</p>
+    </mat-list-item>
+</mat-list>

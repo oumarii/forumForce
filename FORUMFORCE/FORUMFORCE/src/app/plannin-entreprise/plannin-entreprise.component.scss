@@ -1,0 +1,107 @@
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.plan h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.plan .row {
+    margin-bottom: 20px;
+}
+
+.plan .col-sm p {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.liste-seances {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+
+.liste-seances h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.list-group-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.list-group-item strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.list-group-item p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.list-group-item:last-child {
+    margin-bottom: 0;
+}
+
+.list-group-item:hover {
+
+    background-color: rgb(23, 224, 255);
+    padding: 6%;
+    transition: background-color 0.3s, padding 0.3s;
+    /* Ajout de la transition */
+}
+
+h3:hover {
+
+    font-size: 200%;
+    color: #c800ff;
+    transition: font-size 0.3s, color 0.3s;
+}
+
+nav {
+
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /* Pour centrer les éléments de la barre de navigation horizontalement */
+}
+
+nav ul li {
+    display: inline-block;
+    /* Pour afficher les éléments de la barre de navigation sur une ligne */
+}
+
+nav ul li a {
+    display: block;
+    /* Pour étendre les liens sur toute la largeur des éléments de la barre de navigation */
+    padding: 10px 20px;
+    /* Espacement interne pour les liens */
+    text-decoration: none;
+    /* Pour supprimer le soulignement par défaut des liens */
+    color: #333;
+    /* Couleur du texte des liens */
+}
+
+nav ul li a:hover {
+    background-color: #f0f0f0;
+    /* Couleur de fond au survol des liens */
+}

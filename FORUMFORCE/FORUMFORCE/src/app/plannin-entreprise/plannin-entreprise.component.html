@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="plan">
+
+        <div class="row">
+            <div class="col-sm">
+                <h3><i class="fas fa-map-marker-alt"></i> Lieu: {{ logi.lieu }}</h3>
+            </div>
+            <div class="col-sm">
+                <h3><i class="far fa-calendar-alt"></i> Date: {{ logi.dateEv }}</h3>
+            </div>
+            <div class="col-sm">
+                <h3><i class="fas fa-ticket-alt"></i>Forum des entreprises Enicarthage</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+
+
+<div style="margin-left: 30%; width: 600px;">
+    <h1 style="margin-left: 35%; ">PLANNING :</h1>
+    <br><br>
+    <ul *ngFor="let se of seances " class="list-group">
+        <!-- Remplacez les valeurs ci-dessous par vos données réelles -->
+        <li class="list-group-item">
+            <strong style="margin-left: 30%;">Sujet :</strong> {{se.sujet}}<br>
+            <strong style="margin-left: 30%;">Heure_d:</strong> {{se.temp_deb}}<br>
+            <strong style="margin-left: 30%;">Heure_f:</strong> {{se.temp_fin}}<br>
+            <strong style="margin-left: 30%;">Presentateur:</strong> {{se.animateurs.nom}} {{se.animateurs.prenom}}<br>
+
+        </li>
+
+    </ul>
+</div>
+
+
+
+<nav>
+
+    <ul>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fab fa-google"></i> Gmail</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fab fa-instagram"></i> Instagram</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-phone"></i> Numéro de téléphone</a>
+        </li>
+    </ul>
+
+</nav>

@@ -1,0 +1,37 @@
+<form>
+    <div class="form-group">
+        <label for="description">Description :</label>
+        <input [(ngModel)]="depence.description" type="text" class="form-control" id="description" name="description"
+            required>
+    </div>
+    <div class="form-group">
+        <label for="montant">Montant :</label>
+        <input [(ngModel)]="depence.montant" type="number" class="form-control" id="montant" name="montant" required>
+    </div>
+    <div class="form-group">
+        <label for="numFacture">Numéro de facture :</label>
+        <input [(ngModel)]="depence.numFacture" type="text" class="form-control" id="numFacture" name="numFacture">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="ajouter()">Enregistrer</button>
+</form>
+
+<br><br><br>
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let i of depences">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h5 class="mb-1"> {{i.id}}</h5>
+                <h5 class="mb-1"> description {{i.description}}</h5>
+                <p class="mb-1">Montant: {{i.montant}} DT</p>
+                <p class="mb-1">Numéro de facture: {{i.numFacture}} </p>
+            </div>
+            <div>
+                <button type="button" class="btn btn-sm btn-primary" (click)="editer(i)"><i
+                        class="fas fa-edit"></i></button>
+                <button type="button" class="btn btn-sm btn-danger" (click)="supprimer(i.id)"><i
+                        class="fas fa-trash-alt"></i></button>
+            </div>
+        </div>
+    </li>
+</ul>

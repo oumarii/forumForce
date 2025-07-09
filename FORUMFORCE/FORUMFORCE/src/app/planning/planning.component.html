@@ -1,0 +1,86 @@
+<div class="all">
+    <div class="plan">
+        <h2>Planning</h2>
+        <p>Lieu: {{logi.lieu}} <span id="planning-location"></span></p>
+
+        <p>Date: {{logi.dateEv}} <span id="planning-date"></span></p>
+
+        <button id="Edit" (click)="Editer()">Edit Event</button>
+
+
+        <form class="planning-form" *ngIf="Edit">
+            <label for="planning-location">Lieu:</label>
+            <input [(ngModel)]="logi.lieu" type="text" id="planning-location" name="planning-location" required>
+
+            <label for="planning-date">Date:</label>
+            <input [(ngModel)]="logi.dateEv" type="date" id="planning-date" name="planning-date" required>
+
+            <button type="submit" (click)="modifierlogistique()">Valider</button>
+        </form>
+    </div>
+
+
+
+
+
+    <div class="seances" class="container mt-5">
+
+        <form *ngIf="nouvel" class="session-form">
+            <div class="form-group">
+                <label for="start-time">Heure de début :</label>
+                <input [(ngModel)]="seanc.temp_deb" type="time" class="form-control" id="start-time" name="start-time"
+                    step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="end-time">Heure de fin :</label>
+                <input [(ngModel)]="seanc.temp_fin" type="time" class="form-control" id="end-time" name="end-time"
+                    step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Sujet :</label>
+                <input [(ngModel)]="seanc.sujet" type="text" class="form-control" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="animateur-nom">Animateur_id :</label>
+                <input [(ngModel)]="seanc.animateurs.id" type="text" class="form-control" id="animateur-nom"
+                    name="animateur-nom" required>
+            </div>
+
+            <button (click)="ajouter()" type="submit" class="btn btn-primary">Ajouter Séance</button>
+        </form>
+
+        <button (click)="apparition_Formu()" style="margin-left: 80%;" type="submit" class="btn btn-primary">Nouvelle
+            Séance</button>
+
+
+
+
+
+
+
+
+
+
+
+
+        <h2>Liste des Séances :</h2>
+        <ul *ngFor="let se of seances " class="list-group">
+            <!-- Remplacez les valeurs ci-dessous par vos données réelles -->
+            <li class="list-group-item">
+                <strong>Sujet :</strong> {{se.sujet}}<br>
+                <strong>Heure_d:</strong> {{se.temp_deb}}<br>
+                <strong>Heure_f:</strong> {{se.temp_fin}}<br>
+                <strong>Presentateur:</strong> {{se.animateurs.nom}} {{se.animateurs.prenom}}<br>
+                <div class="btn-group float-right">
+                    <button (click)="supprimerESeance(se.id)" class="btn btn-danger btn-sm">Supprimer</button>
+                    <button (click)="editer(se)" class="btn btn-primary btn-sm">modifier_temps</button>
+                </div>
+            </li>
+
+        </ul>
+
+
+
+        <div>

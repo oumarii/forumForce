@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <!-- Bootstrap CSS -->
+  <style>
+    body {
+      margin-left: 350px;
+      margin-right: 350px;
+      margin-top: 0;
+      margin-bottom: 0;
+      background-color: #1c61a2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 login-section" style="background-color: #8193a3;">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.Hl3kYfdmhVMoYwtGmCO9CwHaHa&pid=Api&P=0&h=180"
+          style="width: 200px;height: 200px; margin-left: 80px; border-radius: 100px;margin-top: 0px;margin-bottom: -200px;"
+          alt="">
+        <h2 style="margin-top: 250px; margin-left: 40%; font-weight: bold; font-style: italic;">LOGIN</h2>
+        <form style="margin-top: 50px;" (ngSubmit)="login()">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" [(ngModel)]="username" name="username" class="form-control" id="username"
+              placeholder="Enter username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" [(ngModel)]="passss" name="password" class="form-control"
+              placeholder="Enter password">
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary btn-block"
+              style="margin-top: 30px; margin-left: 20px; background-color: #224664;">Login</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6 new-enterprise-section">
+        <h2 style="margin-top: 0px;">New Enterprise</h2>
+        <p style="margin-top: 0x;">Click below to access the New Enterprise Form:</p>
+        <button type="button" class="btn btn-success" style="margin-top: 0px;" (click)="formulaire()">New Enterprise
+          Form</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

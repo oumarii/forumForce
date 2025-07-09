@@ -1,0 +1,14 @@
+<div style="margin-left: 30%; width: 600px;">
+    <h1 style="margin-left: 35%; ">FEEDBACKS :</h1>
+    <br><br>
+    <ul *ngFor="let se of Feeds " class="list-group">
+        <li class="list-group-item">
+
+            <strong style="margin-left: 30%;">Feed :</strong> {{se.feedback}}<br>
+
+            <div class="btn-group float-right">
+                <button (click)="supprimerFeed(se.id)" class="btn btn-danger btn-sm">Supprimer</button>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,116 @@
+<div class="container">
+
+    <div class="row mb-3">
+        <div class="col">
+            <!-- Champ de recherche -->
+            <input type="text" class="form-control" placeholder="Rechercher une entreprise..."
+                [(ngModel)]="termRecherche" (input)="rechercherEntreprise()">
+        </div>
+        <div class="col">
+            <button class="btn btn-primary" (click)="apparitin()">Nouvelle entreprise</button>
+        </div>
+    </div>
+    <!-- Formulaire d'ajout d'entreprise -->
+    <div *ngIf="nouvel" class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Nouvelle entreprise
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nom">Nom de l'entreprise :</label>
+                            <input type="text" [(ngModel)]="ent.nom" class="form-control" id="nom" name="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="codeFiscal">Code fiscal :</label>
+                            <input type="text" [(ngModel)]="ent.nif" class="form-control" id="codeFiscal"
+                                name="codeFiscal" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="codeFiscal">Email :</label>
+                            <input type="text" [(ngModel)]="ent.e_mail" class="form-control" id="email" name="Email"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="motDePasse">Mot de passe :</label>
+                            <input type="password" [(ngModel)]="ent.motPasse" class="form-control" id="motDePasse"
+                                name="motDePasse" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="adresse">Adresse :</label>
+                            <input type="text" [(ngModel)]="ent.adresse" class="form-control" id="adresse"
+                                name="adresse" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="numTelephone">Numéro de téléphone :</label>
+                            <input type="tel" [(ngModel)]="ent.numtel" class="form-control" id="numTelephone"
+                                name="numTelephone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="etat">État :</label>
+                            <select class="form-control" id="etat" name="etat" required>
+                                <option value="PAYER">PAYER</option>
+                                <option value="NON_PAYER">NON_PAYER</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="packId">ID du pack :</label>
+                            <input type="number" [(ngModel)]="ent.pack.id" class="form-control" id="packId"
+                                name="packId" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" (click)="ajouter()">VALIDER</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Liste des entreprises -->
+
+    <div class="row mt-3">
+
+        <div class="col">
+            <h1> <i class="material-icons">business</i>
+                <span>Liste des Entreprises</span>
+            </h1>
+            <table class="table">
+                <!-- Entête du tableau -->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Code fiscal</th>
+                        <th>Adresse</th>
+                        <th>Numéro de téléphone</th>
+                        <th>Email</th>
+                        <th>mot_pass</th>
+                        <th>État</th>
+                        <th>Pack ID</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <!-- Corps du tableau -->
+                <tbody>
+                    <tr *ngFor="let entreprise of entreprises ">
+                        <td>{{ entreprise.id }}</td>
+                        <td>{{ entreprise.nom }}</td>
+                        <td>{{ entreprise.nif }}</td>
+                        <td>{{ entreprise.adresse }}</td>
+                        <td>{{ entreprise.numtel }}</td>
+                        <td>{{ entreprise.e_mail }}</td>
+                        <td>{{ entreprise.motPasse }}</td>
+                        <td>{{ entreprise.etat }}</td>
+                        <td>{{ entreprise.pack.id }}</td>
+                        <td>
+                            <button (click)="editer(entreprise)" class="btn btn-sm btn-primary">Éditer</button>
+                            <button (click)="supprimerEntreprise(entreprise.id)"
+                                class="btn btn-sm btn-danger">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

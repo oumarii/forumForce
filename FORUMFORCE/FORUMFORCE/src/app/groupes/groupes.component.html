@@ -1,0 +1,68 @@
+<div class="container">
+
+    <div class="row mb-3">
+        <div class="col">
+            <!-- Champ de recherche -->
+            <input type="text" class="form-control" placeholder="Rechercher une groupe..." [(ngModel)]="termRecherche"
+                (input)="rechercherGroupe()">
+        </div>
+        <div class="col">
+            <button class="btn btn-primary" (click)="apparitin()">Nouveau groupe</button>
+        </div>
+    </div>
+    <!-- Formulaire d'ajout ou d'édition de groupe -->
+    <div class="row" *ngIf="nouvel">
+        <div class="col">
+            <div class="card">
+                <div class="card-header"> </div>
+
+
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nom">Nom du groupe :</label>
+                            <input [(ngModel)]="groupe.nom_groupe" type="text" class="form-control" id="nom" name="nom"
+                                required>
+                        </div>
+                        <!-- Autres champs à ajouter selon les besoins -->
+                        <button (click)=" nouveauGroupe()" type="submit" class="btn btn-primary">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Liste des groupes -->
+
+    <div class="row mt-3">
+
+        <div class="col">
+            <h1> <i class="material-icons">group</i>
+                <span>Liste des Groupes</span>
+            </h1>
+            <table class="table">
+                <!-- Entête du tableau -->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom du Groupe</th>
+                        <!-- Autres en-têtes à ajouter selon les besoins -->
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <!-- Corps du tableau -->
+                <tbody>
+                    <tr *ngFor="let groupe of groupes">
+                        <td>{{ groupe.id }}</td>
+                        <td>{{ groupe.nom_groupe }}</td>
+                        <!-- Autres colonnes à ajouter selon les besoins -->
+                        <td>
+                            <button class="btn btn-sm btn-primary" (click)="editer(groupe)">Éditer</button>
+                            <button (click)="supprimerGroupe(groupe.id)"
+                                class="btn btn-sm btn-danger">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+<p>etudiant works!</p>
+<div class="container">
+
+    <div class="row mb-3">
+        <div class="col">
+            <!-- Champ de recherche -->
+            <input type="text" class="form-control" placeholder="Rechercher un etudiant ..." [(ngModel)]="termRecherche"
+                (input)="rechercherEtd()">
+        </div>
+        <div class="col">
+            <button (click)="apparitin()" class="btn btn-primary">Nouveau Etudiant</button>
+        </div>
+    </div>
+    <!-- Formulaire d'ajout d'entreprise -->
+    <div *ngIf="nouvel" class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Nouvelle etudiant
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nom">Nom :</label>
+                            <input [(ngModel)]="ent.nom" type="text" class="form-control" id="nom" name="nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="codeFiscal">prenom :</label>
+                            <input [(ngModel)]="ent.prenom" type="text" class="form-control" id="pre" name="codeFiscal">
+                        </div>
+                        <div class="form-group">
+                            <label for="codeFiscal">numTele :</label>
+                            <input [(ngModel)]="ent.numTele" type="text" class="form-control" id="tel" name="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="motDePasse">age :</label>
+                            <input [(ngModel)]="ent.age" type="password" class="form-control" id="age"
+                                name="motDePasse">
+                        </div>
+                        <div class="form-group">
+                            <label for="adresse">cin :</label>
+                            <input [(ngModel)]="ent.cin" type="text" class="form-control" id="adresse" name="cin">
+                        </div>
+                        <div class="form-group">
+                            <label for="numTelephone">sexe :</label>
+                            <input [(ngModel)]="ent.sexe" type="tel" class="form-control" id="sexe" name="numTelephone">
+                        </div>
+                        <div class="form-group">
+                            <label for="numTelephone">niveau :</label>
+                            <input [(ngModel)]="ent.niveau" type="tel" class="form-control" id="niv"
+                                name="numTelephone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="numTelephone">Ecole :</label>
+                            <input [(ngModel)]="ent.ecole" type="tel" class="form-control" id="eco" name="numTelephone">
+                        </div>
+                        <div class="form-group">
+                            <label for="packId">ID du groupe :</label>
+                            <input [(ngModel)]="ent.grpp.id" type="number" class="form-control" id="packId"
+                                name="packId">
+                        </div>
+                        <button (click)="ajouter()" type="submit" class="btn btn-primary">VALIDER</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Liste des entreprises -->
+
+    <div class="row mt-3">
+
+        <div class="col">
+            <h1> <i class="material-icons">business</i>
+                <span>Liste des etudiants</span>
+            </h1>
+            <table class="table">
+                <!-- Entête du tableau -->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Numéro de téléphone</th>
+                        <th>Âge</th>
+                        <th>CIN</th>
+                        <th>Sexe</th>
+                        <th>Niveau d'étude</th>
+                        <th>École</th>
+                        <th> IDGroupe</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <!-- Corps du tableau -->
+                <tbody>
+                    <tr *ngFor="let etudiant of etudiants ">
+                        <td>{{ etudiant.id }}</td>
+                        <td>{{ etudiant.nom }}</td>
+                        <td>{{ etudiant.prenom }}</td>
+                        <td>{{ etudiant.numTele }}</td>
+                        <td>{{ etudiant.age }}</td>
+                        <td>{{ etudiant.cin }}</td>
+                        <td>{{ etudiant.sexe }}</td>
+                        <td>{{ etudiant.niveau }}</td>
+                        <td>{{ etudiant.ecole }}</td>
+                        <td>{{ etudiant.grpp.id}}</td>
+                        <td>
+                            <button (click)="editer(etudiant)" class="btn btn-sm btn-primary">Éditer</button>
+                            <button (click)="supprimerEtd(etudiant.id)" class="btn btn-sm btn-danger">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

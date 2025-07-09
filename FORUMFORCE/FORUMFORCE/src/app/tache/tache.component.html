@@ -1,0 +1,95 @@
+<div class="container">
+
+    <div class="row mb-3">
+        <div class="col">
+            <!-- Champ de recherche -->
+            <input type="text" class="form-control" placeholder="Rechercher une tâche..." [(ngModel)]="termRecherche"
+                (input)="rechercherT()">
+        </div>
+        <div class="col">
+            <button class="btn btn-primary" (click)="nouvelleTache()">Nouvelle tâche</button>
+        </div>
+    </div>
+    <div class="row" *ngIf="afficherNouvelleTache">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    Nouvelle tâche
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nom">Nom de la tâche :</label>
+                            <input [(ngModel)]="tache.nom" type="text" class="form-control" id="nom" name="nom"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dateDebut">Date de début :</label>
+                            <input [(ngModel)]="tache.dateDebut" type="date" class="form-control" id="dateDebut"
+                                name="dateDebut" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dateFin">Date de fin :</label>
+                            <input [(ngModel)]="tache.dateFin" type="date" class="form-control" id="dateFin"
+                                name="dateFin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="finish">Terminée :</label>
+                            <select [(ngModel)]="tache.finish" class="form-control" id="finish" name="finish" required>
+                                <option value="true">Oui</option>
+                                <option value="false">Non</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="id">id groupe :</label>
+                            <input [(ngModel)]="tache.groupe.id" type="number" class="form-control" id="id" name="id"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" (click)="ajouter()">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Liste des tâches -->
+
+    <div class="row mt-3">
+
+        <div class="col">
+            <h1> <i class="material-icons">assignment</i>
+                <span>Liste des Tâches</span>
+            </h1>
+            <table class="table">
+                <!-- Entête du tableau -->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Date de début</th>
+                        <th>Date de fin</th>
+                        <th>Terminée</th>
+                        <th>Groupe</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <!-- Corps du tableau -->
+                <tbody>
+                    <tr *ngFor="let tache of taches">
+                        <td>{{ tache.id }}</td>
+                        <td>{{ tache.nom }}</td>
+                        <td>{{ tache.dateDebut | date }}</td>
+                        <td>{{ tache.dateFin | date }}</td>
+                        <td>{{ tache.finish ? 'Oui' : 'Non' }}</td>
+                        <td>{{ tache.groupe.id }}</td>
+                        <td>
+                            <button (click)="editer(tache)" class="btn btn-sm btn-primary"><i
+                                    class="fas fa-edit"></i></button>
+                            <button (click)="supprimerT(tache.id)" class="btn btn-sm btn-danger"><i
+                                    class="fas fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
